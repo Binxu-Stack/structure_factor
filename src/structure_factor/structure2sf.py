@@ -2,9 +2,6 @@
 
 
 import numpy as np
-import sys
-import time
-import argparse
 
 import matplotlib.pyplot as plt
 from ase.io import read, write
@@ -19,9 +16,15 @@ import click
 @click.option("-m","--max_points", help="Define the max points.", type=int, default=20000)
 @click.option("-w","--q_width", help="Define the q width.", type=float, default=0.02)
 @click.option("-n","--nq", help="Define the nq.", type=int, default=1000)
-@click.option("-f","--format", help="Define the format of the structure file.", type=str, default="extxyz")
+@click.option("-sf","--structure_format", help="Define the format of the structure file.", type=str, default="extxyz")
 @click.option("-o","--output_file", help="Define the output file.", type=str, default="sq.dat")
-def sq_of_structure_to_file(structure_file:str,q_max:float=4.0,max_points:int=20000,q_width:float=0.02,nq:int=1000,structure_format:str='extxyz',output_file:str=None):
+def sq_of_structure_to_file(structure_file:str,
+                            q_max:float=4.0,
+                            max_points:int=20000,
+                            q_width:float=0.02,
+                            nq:int=1000,
+                            structure_format:str='extxyz',
+                            output_file:str=None):
     """
     Calculate the static structure factor S(q) from a structure file.
     Args:
@@ -41,7 +44,12 @@ def sq_of_structure_to_file(structure_file:str,q_max:float=4.0,max_points:int=20
         for iq, iSq in zip(q, Sq):
             f.write(f"{iq} {iSq}\n")
 
-def sq_of_structure(structure_file:str,q_max:float=4.0,max_points:int=20000,q_width:float=0.02,nq:int=1000,structure_format:str='extxyz'):
+def sq_of_structure(structure_file:str,
+                    q_max:float=4.0,
+                    max_points:int=20000,
+                    q_width:float=0.02,
+                    nq:int=1000,
+                    structure_format:str='extxyz'):
     """
     Calculate the static structure factor S(q) from a structure file.
     Args:

@@ -222,22 +222,6 @@ wheels = [
 ]
 
 [[package]]
-name = "gsd"
-version = "4.2.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "numpy" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/15/fb/9d4d99d7a456f830660112b9c369fb4281793f8284f99ca9b2bfabcd4ed5/gsd-4.2.0.tar.gz", hash = "sha256:eb197abd735e98817bcdc1ee34e4968231d572da48c097b3ccf316be828cf86a", size = 193260, upload-time = "2025-10-07T23:30:45.487Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/c8/a0/a55e9b178d65eb00eac02bf94612f89f9d859f683d68f4a80b64a8267d9c/gsd-4.2.0-cp311-abi3-macosx_10_9_x86_64.whl", hash = "sha256:f97d41eb780c1635180c6df934977280252307fa1ecfc84c4d73d87e27cfb56b", size = 262709, upload-time = "2025-10-07T23:30:39.167Z" },
-    { url = "https://files.pythonhosted.org/packages/20/b2/0808049f31b207ea4909c4ecfabca809e1f8f030933c5397905c86dd08e7/gsd-4.2.0-cp311-abi3-macosx_11_0_arm64.whl", hash = "sha256:86044ad658665486abc50a0b60322e9d502f1e15c438c40977d8afccb0117934", size = 264624, upload-time = "2025-10-07T23:30:40.775Z" },
-    { url = "https://files.pythonhosted.org/packages/21/8a/8dc6019a8cb5513c22d07d99669a1e77f76369d82144d3f37f5e1125ac19/gsd-4.2.0-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:46a9dfa772131c57d0ee3f390a72b809e29bb91cb569f31883d324ed7343650a", size = 606287, upload-time = "2025-10-07T23:30:42.101Z" },
-    { url = "https://files.pythonhosted.org/packages/18/07/13885db43a85efe6ff9e67f54d416efd3cb50de5ee18ab176b288c91e4b8/gsd-4.2.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7bb37fe16926377e479c1c3a8ff9817d160a085231bf7fc9fb9a9cfee97fdb07", size = 619077, upload-time = "2025-10-07T23:30:43.155Z" },
-    { url = "https://files.pythonhosted.org/packages/63/a7/8d13240a109b9f73d5723565eca024c087d0e7cbad6ac096598acaeb4421/gsd-4.2.0-cp311-abi3-win_amd64.whl", hash = "sha256:3ebb1b58cb2bd2f9527e4295dc79f3188221ef21242de4e5c042825833f838b2", size = 256684, upload-time = "2025-10-07T23:30:44.634Z" },
-]
-
-[[package]]
 name = "joblib"
 version = "1.5.2"
 source = { registry = "https://pypi.org/simple" }
@@ -922,7 +906,6 @@ dependencies = [
     { name = "ase" },
     { name = "click" },
     { name = "dynasor" },
-    { name = "gsd" },
     { name = "numpy" },
 ]
 
@@ -931,7 +914,6 @@ requires-dist = [
     { name = "ase", specifier = ">=3.26.0" },
     { name = "click", specifier = ">=8.3.0" },
     { name = "dynasor", specifier = ">=2.3" },
-    { name = "gsd", specifier = ">=4.2.0" },
     { name = "numpy", specifier = ">=2.3.4" },
 ]
 

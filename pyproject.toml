@@ -8,10 +8,9 @@ dependencies = [
     "ase>=3.26.0",
     "click>=8.3.0",
     "dynasor>=2.3",
-    "gsd>=4.2.0",
     "numpy>=2.3.4",
 ]
 
 [project.scripts]
-sq = "structure_factor.structure2sf:sq_of_xyz_to_file"
+sq = "structure_factor.structure2sf:sq_of_structure_to_file"
 fwhm = "structure_factor.structure2sf:fwhm_of_structure_to_file"
