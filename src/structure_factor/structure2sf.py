@@ -130,7 +130,7 @@ def fwhm_structure_file(structure_file=None,q_max=4.0,max_points=None,q_width=0.
 @click.command(context_settings=dict(show_default=True))
 @click.argument("structure_file", type=str, required=True, default="test/tmp_traj.xyz")
 @click.option("-q","--q_max", help="Define the q max.", type=float, default=4.0)
-@click.option("-m","--max_points", help="Define the max points.", type=int, default=20000)
+@click.option("-m","--max_points", help="Define the max points.", type=int, default=40000)
 @click.option("-w","--q_width", help="Define the q width.", type=float, default=0.02)
 @click.option("-n","--nq", help="Define the nq.", type=int, default=1000)
 @click.option("-sf","--structure_format", help="Define the format of the structure file.", type=str, default="extxyz")
@@ -182,11 +182,11 @@ def fwhm_of_structure_to_file(structure_file:str,
         plt.plot(q[skip_front:], Sq[skip_front:])
         plt.axvline(x=xl, color='red')
         plt.axvline(x=xr, color='red')
-        plt.xlabel(r"q ($\AA^{-1}$)")
+        plt.xlabel(r"q ($\mathrm{rad}\ \mathrm{\AA}^{-1}$)")
         plt.ylabel("S(q)")
         plt.title("Static Structure Factor S(q)")
-        plt.savefig(f"{output_file}.png")
-        plt.show()
+        plt.savefig(f"{output_file}.svg")
+        #plt.show()
         plt.close()
     return fwhm, xl, xr
 
