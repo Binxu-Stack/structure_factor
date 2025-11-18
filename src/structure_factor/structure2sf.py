@@ -137,6 +137,7 @@ def fwhm_structure_file(structure_file=None,q_max=4.0,max_points=None,q_width=0.
 @click.option("-s","--skip_front", help="Define the number of points to skip from the front.", type=int, default=100)
 @click.option("-o","--output_file", help="Define the output file.", type=str, default="fwhm.dat")
 @click.option("-p","--plot", help="Plot the static structure factor S(q) and the FWHM.", is_flag=True, default=False)
+@click.option("-sq","--output_sq", help="Whether to output sq.dat", is_flag=True, default=False)
 def fwhm_of_structure_to_file(structure_file:str,
                             q_max:float=4.0,
                             max_points:int=20000,
@@ -145,6 +146,7 @@ def fwhm_of_structure_to_file(structure_file:str,
                             structure_format:str='extxyz',
                             skip_front:int=100,
                             output_file:str=None,
+                            output_sq:bool=False,
                             plot:bool=False):
     """
     Calculate the FWHM of the static structure factor S(q) from a structure file.
@@ -155,7 +157,9 @@ def fwhm_of_structure_to_file(structure_file:str,
         q_width: The width of the q points in q space.
         nq: The number of q points.
         skip_front: The number of points to skip from the front.
-        structure_format: The format of the structure file pass to ase.io.read.
+        structure_format: The format of the structure file pass to ase.io.read. e.g. extxyz, lammps-data, lammps-dump-text, cif, etc.
+        output_sq: Whether to output sq.dat.
+        plot: Whether to plot the static structure factor S(q) and the FWHM.
     Returns:
         fwhm: The FWHM value in q space in A^-1.
         xl: The left x value in q space in A^-1.
@@ -170,6 +174,10 @@ def fwhm_of_structure_to_file(structure_file:str,
         f.write(f"FWHM: {fwhm} A^-1\n")
         f.write(f"Left x: {xl} A^-1\n")
         f.write(f"Right x: {xr} A^-1\n")
+    if output_sq:
+        with open(f"{output_file}.sq.dat",'w') as f:
+            for iq, iSq in zip(q[skip_front:], Sq[skip_front:]):
+                f.write(f"{iq} {iSq}\n")
     if plot:
         plt.plot(q[skip_front:], Sq[skip_front:])
         plt.axvline(x=xl, color='red')
@@ -180,6 +188,7 @@ def fwhm_of_structure_to_file(structure_file:str,
         plt.savefig(f"{output_file}.png")
         plt.show()
         plt.close()
+    return fwhm, xl, xr
 
 
 if __name__ == "__main__":
