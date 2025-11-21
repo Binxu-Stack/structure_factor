@@ -115,6 +115,9 @@ def sq_structure_Debye(structure_file:str="test/Cu-Zr-Al.xyz",
 
 def test_sq_structure_Debye():
     q, Sq = sq_structure_Debye()
+    with open("test/sq_structure_Debye.dat",'w') as f:
+        for iq, iSq in zip(q, Sq):
+            f.write(f"{iq} {iSq}\n")
     fwhm, xl, xr = calculate_fwhm(q, Sq)
     print(f"FWHM: {fwhm} A^-1")
     print(f"Left x: {xl} A^-1")
@@ -129,6 +132,19 @@ def test_sq_structure_Debye():
     plt.savefig("test/sq_structure_Debye.svg")
     plt.show()
     plt.close()
+    plt.figure()
+    data = np.loadtxt("test/fwhm.dat.sq.dat")
+    plt.plot(data[:,0], data[:,1],label="S(q) from direct method")
+    plt.plot(q, Sq,label="S(q) from Debye model (RDF)")
+    plt.legend()
+    plt.xlabel(r"q ($\mathrm{rad}\ \mathrm{\AA}^{-1}$)")
+    plt.ylabel("S(q)")
+    plt.title("Static Structure Factor S(q) from direct method and Debye model (RDF)")
+    plt.savefig("test/sq_structure_Debye_comparison.svg")
+    plt.show()
+    plt.close()
+
+    plt.plot(q, Sq)
 
 def calculate_fwhm(x, y):
     """
