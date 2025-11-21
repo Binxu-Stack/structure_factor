@@ -9,6 +9,7 @@ from dynasor.qpoints import get_spherical_qpoints
 from dynasor import compute_static_structure_factors, Trajectory
 from dynasor.post_processing import get_spherically_averaged_sample_smearing
 import click
+import freud
 
 @click.command(context_settings=dict(show_default=True))
 @click.argument("structure_file", type=str, required=True, default="test/tmp_traj.xyz")
@@ -44,7 +45,7 @@ def sq_of_structure_to_file(structure_file:str,
         for iq, iSq in zip(q, Sq):
             f.write(f"{iq} {iSq}\n")
 
-def sq_of_structure(structure_file:str,
+def sq_of_structure(structure_file:str="test/Cu-Zr-Al.xyz",
                     q_max:float=4.0,
                     max_points:int=20000,
                     q_width:float=0.02,
@@ -78,8 +79,56 @@ def sq_of_structure(structure_file:str,
     sample = compute_static_structure_factors(traj, q_points)
     q_linspace = np.linspace(0,q_max,nq)
     sample_averaged = get_spherically_averaged_sample_smearing(sample, q_norms=q_linspace, q_width=q_width)
-    q, Sq = sample_averaged.q_norms, sample_averaged.Sq.reshape(-1)/n_atoms
+    q, Sq = sample_averaged.q_norms, sample_averaged.Sq.reshape(-1)
     return q, Sq
+
+def sq_structure_Debye(structure_file:str="test/Cu-Zr-Al.xyz",
+                       q_max:float=4.0,
+                       q_min:float=1.5,
+                       nq:int=200,
+                       structure_format:str='extxyz'):
+    """
+    Calculate the static structure factor S(q) from a structure file using the Debye model.
+    Args:
+        structure_file: The path to the structure file.
+        q_max: The maximum q value.
+        q_min: The minimum q value.
+        nq: The number of q points.
+        structure_format: The format of the structure file pass to ase.io.read.
+    Returns:
+        q: The q values.
+        Sq: The S(q) values.
+    """
+    atoms = read(structure_file, format=structure_format)
+    box = freud.box.Box.from_matrix(atoms.cell[:])
+    pos = atoms.positions
+    k_min = q_min
+    k_max = q_max
+    SfDebye = freud.diffraction.StaticStructureFactorDebye(num_k_values=nq,k_min=k_min,k_max=k_max)
+    SfDebye.compute(system=(box, pos))
+    q = SfDebye.k_values
+    Sq = SfDebye.S_k
+    fig, ax = plt.subplots()
+    SfDebye.plot(ax=ax)
+    plt.show()
+    return q, Sq
+
+def test_sq_structure_Debye():
+    q, Sq = sq_structure_Debye()
+    fwhm, xl, xr = calculate_fwhm(q, Sq)
+    print(f"FWHM: {fwhm} A^-1")
+    print(f"Left x: {xl} A^-1")
+    print(f"Right x: {xr} A^-1")
+    plt.figure()
+    plt.plot(q, Sq)
+    plt.axvline(x=xl, color='red')
+    plt.axvline(x=xr, color='red')
+    plt.xlabel(r"q ($\mathrm{rad}\ \mathrm{\AA}^{-1}$)")
+    plt.ylabel("S(q)")
+    plt.title("Static Structure Factor S(q) using Debye model")
+    plt.savefig("test/sq_structure_Debye.svg")
+    plt.show()
+    plt.close()
 
 def calculate_fwhm(x, y):
     """
@@ -192,7 +241,7 @@ def fwhm_of_structure_to_file(structure_file:str,
 
 
 if __name__ == "__main__":
-    sq_of_structure(structure_file="test/tmp_traj.xyz",structure_format="extxyz")
+    test_sq_structure_Debye()
 
 
 

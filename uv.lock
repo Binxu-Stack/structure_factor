@@ -208,6 +208,60 @@ wheels = [
 ]
 
 [[package]]
+name = "freud-analysis"
+version = "3.4.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.12'",
+]
+dependencies = [
+    { name = "numpy", marker = "python_full_version < '3.12'" },
+    { name = "parsnip-cif", marker = "python_full_version < '3.12'" },
+    { name = "rowan", marker = "python_full_version < '3.12'" },
+    { name = "scipy", marker = "python_full_version < '3.12'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/54/91/cea77667083f2e8e001cc2d4340a85aa544245f9e629239fe7c8ab23000d/freud_analysis-3.4.0.tar.gz", hash = "sha256:74e5b71c45df097ddf79c978d2e6b0510d03baf0ac999a90e7797880a895e9ea", size = 5674132, upload-time = "2025-08-05T20:42:38.061Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0c/71/a73e29516b108b6722e5c54acc94b7bb371f41bc0aa5d2cabaaf3ad0902e/freud_analysis-3.4.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:34a41c703762e0d6e5ffaba5005997cba13e3865c1199eb2096015315ea2f7d5", size = 1310114, upload-time = "2025-08-05T20:42:04.675Z" },
+    { url = "https://files.pythonhosted.org/packages/d9/b7/5fa6639e2e8844d57d459e08e85b960d56c7346eefd1e3883903a2d6fb93/freud_analysis-3.4.0-cp311-cp311-macosx_11_0_x86_64.whl", hash = "sha256:933b55d1198b978a80389a9286dd6341a86049edaa20876bee9f853a961a6290", size = 1527365, upload-time = "2025-08-05T20:42:06.468Z" },
+    { url = "https://files.pythonhosted.org/packages/a1/04/d248e81faf40215182c52c0529edb4ea89122e8563e594a9e1f60a45c710/freud_analysis-3.4.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:310748dce7f9ab78646a0c03d29c7a4bb9dc5f2928aee0d07f19ec28ab00e8d0", size = 1969055, upload-time = "2025-08-05T20:42:07.981Z" },
+    { url = "https://files.pythonhosted.org/packages/ed/86/fa49716e8b2b29ca5f911a1915a3b942394b1df0d2f2fbeee0e9c743cf1f/freud_analysis-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f3b6febc439c6dbe7d264f8df726c9e6340d3f16713bf396dba9997e220559e8", size = 2116504, upload-time = "2025-08-05T20:42:09.491Z" },
+    { url = "https://files.pythonhosted.org/packages/d9/07/8db2f7969b40dcddfc5663d06379d55946a637a326095ea4d45bcd725504/freud_analysis-3.4.0-cp311-cp311-win_amd64.whl", hash = "sha256:e731f80d1da1774167b264b7cd15a1f59acd685d5755e667ad7381882f3db8f2", size = 1604584, upload-time = "2025-08-05T20:42:10.974Z" },
+    { url = "https://files.pythonhosted.org/packages/ec/7f/0e536dfa4afab9b9593b0113b85cb8e9064769dd29c980fdda93ccf52c5a/freud_analysis-3.4.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:491355e9c85e947e7de2efc0f2ef1dc7d625bc01dc29c544903255b65a618b9e", size = 1302518, upload-time = "2025-08-05T20:42:12.787Z" },
+    { url = "https://files.pythonhosted.org/packages/42/5d/ae826dad68e16e5e81add39eceb150c16ff5efa16aa7722abc9252348d86/freud_analysis-3.4.0-cp312-cp312-macosx_11_0_x86_64.whl", hash = "sha256:144b774025507ee3f72f25ba6c5460ef0391db8f796ea37c54bfe70975e5414e", size = 1523263, upload-time = "2025-08-05T20:42:14.191Z" },
+    { url = "https://files.pythonhosted.org/packages/72/f7/3e90eac3815c3008c6c6dc78e7f334e3350c42cd912801af8530c18381a8/freud_analysis-3.4.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:146b46ac2247fd4acd15a16f5aadbd65f6a19af0e0e6f95a31a73e3ac910679d", size = 1956079, upload-time = "2025-08-05T20:42:16.037Z" },
+    { url = "https://files.pythonhosted.org/packages/24/b5/7bb8c3a325085ed2be9b224917b2e2964c0bb5004fb8a4da1d2bec243720/freud_analysis-3.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:640ae15709af09e95c8c6c4f28a630cfe99763dbf1cb55a21dd310cda4b5e7d9", size = 2106007, upload-time = "2025-08-05T20:42:17.695Z" },
+    { url = "https://files.pythonhosted.org/packages/ce/aa/1418b23645c534969f4c1db9f78545741a0c34f592fa72ec0cfa2b0674a6/freud_analysis-3.4.0-cp312-cp312-win_amd64.whl", hash = "sha256:977924073f466d3302716bbce9a45e719119bd4fae0d64792c7b04a6dc99e43d", size = 1598382, upload-time = "2025-08-05T20:42:19.549Z" },
+    { url = "https://files.pythonhosted.org/packages/20/d6/8b6179deaf4a4d1327e94e47a2ea3fb19e9f239bc2ee54bcc7c48525ead6/freud_analysis-3.4.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:9e944f76d046014d292225ec76ba248843f70b6100e04a3345f2fa35e4a872f5", size = 1301736, upload-time = "2025-08-05T20:42:21.276Z" },
+    { url = "https://files.pythonhosted.org/packages/58/31/46fe254d19ab1c67ac98f61b37899d92393b0f2a27a1f96000ff1709191c/freud_analysis-3.4.0-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:3e30e49175096e1f779494ce6d68b83b2cb1c9e2706236d60828cb72898d6172", size = 1522727, upload-time = "2025-08-05T20:42:23.051Z" },
+    { url = "https://files.pythonhosted.org/packages/31/94/d2bf98dead4f264f66c0a81e432a77fc1b74af0ab248cba854f03fe1b4d3/freud_analysis-3.4.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:29fac39d00dd006a4984bf18a3c4608b23b77b67a5cca49c6aa6f9a2a010f268", size = 1955593, upload-time = "2025-08-05T20:42:24.946Z" },
+    { url = "https://files.pythonhosted.org/packages/89/1b/a581bf61176795e04981a96e297e6082d734191e93e6941f73b3ce5b63c5/freud_analysis-3.4.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:59d751e10d256bf17cc3a1b50343f8cef0b6bb443b3b045a842f47b0cb437e27", size = 2105474, upload-time = "2025-08-05T20:42:26.844Z" },
+    { url = "https://files.pythonhosted.org/packages/1b/67/e978f705d623bce97d2c0eb74a67cf56b72fe748a2502be4127e6ff6877b/freud_analysis-3.4.0-cp313-cp313-win_amd64.whl", hash = "sha256:e3502df6fa60eafd4e7177f74d85c80806588e6087a8a3595a28d14b1b42d035", size = 1597858, upload-time = "2025-08-05T20:42:28.314Z" },
+]
+
+[[package]]
+name = "freud-analysis"
+version = "3.5.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.12'",
+]
+dependencies = [
+    { name = "numpy", marker = "python_full_version >= '3.12'" },
+    { name = "parsnip-cif", marker = "python_full_version >= '3.12'" },
+    { name = "rowan", marker = "python_full_version >= '3.12'" },
+    { name = "scipy", marker = "python_full_version >= '3.12'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b2/72/93d124f61c75eb82b7dba75a2c09c6a16873821875c2866f5d3b42def620/freud_analysis-3.5.0.tar.gz", hash = "sha256:7ef57723972bc1fc7ee6b743343428171f5dae9437392c277b2b655a83990be6", size = 5770346, upload-time = "2025-10-08T13:48:13.452Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5d/ea/f57d17cdef8aa4404b3cd547c92ea2d4c5002383b4352328e15363dd8354/freud_analysis-3.5.0-cp312-abi3-macosx_11_0_arm64.whl", hash = "sha256:2050b00c2e56755707422e463cdbdab808dc5e26e90739a1e3320a2b6c62ef45", size = 1285087, upload-time = "2025-10-08T13:48:03.63Z" },
+    { url = "https://files.pythonhosted.org/packages/59/6d/6d417836710e963ca33915ca56d1548f07971ede812605b0c8144ae08702/freud_analysis-3.5.0-cp312-abi3-macosx_11_0_x86_64.whl", hash = "sha256:9e746258e49017af9f2b54e2194141d9bf7fb630957e04deff38fd2444806cee", size = 1512576, upload-time = "2025-10-08T13:48:05.489Z" },
+    { url = "https://files.pythonhosted.org/packages/a3/8f/2638387686ee1433143fafc91885cfeccb6831c6d6e1bb5ebc13509f0270/freud_analysis-3.5.0-cp312-abi3-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:c0d13152c0c74c744f855719940c66a2ccdfa0972bbfcbd57cf6949bd156b65d", size = 1759681, upload-time = "2025-10-08T13:48:07.342Z" },
+    { url = "https://files.pythonhosted.org/packages/d0/cd/4b9d9c47cf1f07172f6bb6a343c9616d516dc2d61ecc1f6f024ffa4c571a/freud_analysis-3.5.0-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:e726c11a7f5f386383ce6c02f1944eb72f43fd6dcc7903e6910dc6ddc411ac0e", size = 1931950, upload-time = "2025-10-08T13:48:09.433Z" },
+    { url = "https://files.pythonhosted.org/packages/a6/83/b6c364a6785a1c870e0bb840b57a786271b775c81b1982a78ad113d8346b/freud_analysis-3.5.0-cp312-abi3-win_amd64.whl", hash = "sha256:0df1dcf6c6804ac5bf915f4e46c28d3ddf6d3b9002074bb1fb643253c4743746", size = 1586450, upload-time = "2025-10-08T13:48:11.068Z" },
+]
+
+[[package]]
 name = "griddataformats"
 version = "1.0.2"
 source = { registry = "https://pypi.org/simple" }
@@ -466,6 +520,15 @@ wheels = [
 ]
 
 [[package]]
+name = "more-itertools"
+version = "10.8.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz", hash = "sha256:f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd", size = 137431, upload-time = "2025-09-02T15:23:11.018Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a4/8e/469e5a4a2f5855992e425f3cb33804cc07bf18d48f2db061aec61ce50270/more_itertools-10.8.0-py3-none-any.whl", hash = "sha256:52d4362373dcf7c52546bc4af9a86ee7c4579df9a8dc268be0a2f949d376cc9b", size = 69667, upload-time = "2025-09-02T15:23:09.635Z" },
+]
+
+[[package]]
 name = "mrcfile"
 version = "1.5.4"
 source = { registry = "https://pypi.org/simple" }
@@ -702,6 +765,19 @@ wheels = [
 ]
 
 [[package]]
+name = "parsnip-cif"
+version = "0.4.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "more-itertools" },
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b7/05/78d4a137e31abf52c38821195a3c2e92d969cbf3ea8bf5c5100511ea7338/parsnip_cif-0.4.1.tar.gz", hash = "sha256:bafd16efbf0149b787f66b70d6bd314da8f5e5c34a934b056e46297f75bffb81", size = 28700, upload-time = "2025-10-08T20:59:47.255Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ea/9a/7a709b2862015a460c8c623b4215eb7ebc4fd805849c2657901db3226951/parsnip_cif-0.4.1-py3-none-any.whl", hash = "sha256:9d60a6ea6b773fb5626ee73c55fcdc2c3300528148bf2e911e03536dcc718b92", size = 20808, upload-time = "2025-10-08T20:59:45.833Z" },
+]
+
+[[package]]
 name = "pillow"
 version = "12.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -819,6 +895,18 @@ wheels = [
 ]
 
 [[package]]
+name = "rowan"
+version = "1.3.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3c/ef/28e2a8a65b21bd452f4cee91e2eaa81e6f1c3dc8306663182d61104103e5/rowan-1.3.2.tar.gz", hash = "sha256:cda6c44f1a85b16a44bea9eba6c94d4ebb2cc0c75e51f1f70d6410f25929fe11", size = 42386, upload-time = "2024-10-28T16:19:49.383Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ab/7c/376893400e08dfa26e10da79720a7aacb18eae58c5900a4d2d888ac5841c/rowan-1.3.2-py3-none-any.whl", hash = "sha256:d3ac590bf27b62c00a2db150cb8296bc3d2bf0e26a57da5f0cb36750a5372b72", size = 28538, upload-time = "2024-10-28T16:19:47.886Z" },
+]
+
+[[package]]
 name = "scipy"
 version = "1.16.3"
 source = { registry = "https://pypi.org/simple" }
@@ -906,6 +994,8 @@ dependencies = [
     { name = "ase" },
     { name = "click" },
     { name = "dynasor" },
+    { name = "freud-analysis", version = "3.4.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "freud-analysis", version = "3.5.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "numpy" },
 ]
 
@@ -914,6 +1004,7 @@ requires-dist = [
     { name = "ase", specifier = ">=3.26.0" },
     { name = "click", specifier = ">=8.3.0" },
     { name = "dynasor", specifier = ">=2.3" },
+    { name = "freud-analysis", specifier = ">=3.4.0" },
     { name = "numpy", specifier = ">=2.3.4" },
 ]
 

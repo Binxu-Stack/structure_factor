@@ -8,6 +8,7 @@ dependencies = [
     "ase>=3.26.0",
     "click>=8.3.0",
     "dynasor>=2.3",
+    "freud-analysis>=3.4.0",
     "numpy>=2.3.4",
 ]
 
